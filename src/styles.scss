@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  outline: none;
+  color: #161617;
+  &::selection {
+    background: #4421fe40;
+  }
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 2;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding-top: 10px;
+}
+
+p {
+  margin: 0;
+}

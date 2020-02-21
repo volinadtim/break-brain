@@ -1,0 +1,12 @@
+[
+  {
+    "answer": "Imagine a triangle with four triangles inside it. How many triangles are there total?",
+    "correct": "5",
+    "wrong": ["3", "4", "6"]
+  },
+  {
+    "answer": "Кто из президентов США написал свой собственный рассказ про Шерлока Холмса?",
+    "correct": "Джон Кеннеди",
+    "wrong": ["Франклин Рузвельт", "Рональд Рейган"]
+  }
+]

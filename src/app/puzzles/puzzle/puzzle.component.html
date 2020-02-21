@@ -1,0 +1,6 @@
+<div class="title">{{ data.title }}</div>
+<div class="condition">{{ data.condition }}</div>
+<button (click)="toggle()" class="show_solution" [ngClass]="{ active: isShow }">
+  Решение
+</button>
+<div *ngIf="isShow" class="solution" [@enterAnimation]>{{ data.solution }}</div>

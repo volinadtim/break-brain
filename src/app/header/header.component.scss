@@ -1,0 +1,52 @@
+:host {
+  --height: 80px;
+  display: block;
+  // border-bottom: 2px solid #4421fe;
+  box-shadow: inset 0 -5px 5px -3px rgba(0, 0, 0, 0.1);
+  height: var(--height);
+  background: #00000003;
+  user-select: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+}
+
+.logo__p {
+  color: #4421fe;
+}
+
+.links {
+  display: flex;
+  height: 100%;
+}
+
+.link {
+  font-weight: 500;
+  padding: 0 20px;
+  display: block;
+  height: 100%;
+  font-size: 0.9em;
+  line-height: var(--height);
+  &.active,
+  &:hover {
+    color: #4421fe;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  header {
+    justify-content: center;
+  }
+  .links {
+    display: none;
+  }
+}

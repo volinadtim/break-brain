@@ -1,0 +1,30 @@
+<div *ngIf="question && !ended" class="container">
+  <div class="answer">{{ question.answer }}</div>
+  <div class="variants">
+    <button
+      (click)="check(i)"
+      [ngClass]="{
+        correct: isAnswered && i === correct,
+        wrong: isAnswered && i === checked && correct !== checked
+      }"
+      *ngFor="let variant of variants; index as i"
+      class="variant"
+    >
+      {{ variant }}
+    </button>
+  </div>
+  <button
+    [ngClass]="{ hidden: !isAnswered }"
+    (click)="nextQuestion()"
+    class="next"
+  >
+    Продолжить
+  </button>
+</div>
+
+<div *ngIf="ended" class="container">
+  <div class="answer">Вопросы закончились</div>
+  <button (click)="load()" class="next">
+    Начать заново
+  </button>
+</div>
