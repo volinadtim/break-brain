@@ -1,0 +1,41 @@
+<h1>Плитки</h1>
+<div class="start">
+  <button *ngIf="!started" (click)="start()" class="next">
+    Начать игру
+  </button>
+</div>
+<div *ngIf="started" [@enterAnimation] class="game">
+  <div class="table">
+    <div *ngFor="let row of tiles; index as x" class="row">
+      <div
+        class="cell"
+        (click)="check(x, y)"
+        *ngFor="let cell of row; index as y"
+        [ngClass]="{
+          selected: isSelected(x, y),
+          correct: isShow && isCorrect(x, y),
+          wrong: isShow && isWrong(x, y)
+        }"
+      >
+        <div class="cell_in"></div>
+      </div>
+    </div>
+  </div>
+  <div [@enterAnimation] *ngIf="lost" class="end">
+    <div class="score">Ты достиг {{ level }} уровня</div>
+    <button (click)="start()" class="next">
+      Начать заново
+    </button>
+  </div>
+</div>
+<div class="rules">
+  <h2>Правила</h2>
+  <p>
+    Перед тобой будет расположена сетка, некоторые клетки которой зеленые.
+    Запомни расположение этих клеток.
+  </p>
+  <p>
+    Через 2 секунды вся сетка станет серой. Тебе нужно нажать на те клетки,
+    которые были зелёными.
+  </p>
+</div>

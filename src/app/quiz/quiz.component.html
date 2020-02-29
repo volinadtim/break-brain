@@ -1,6 +1,11 @@
-<div *ngIf="question && !ended" class="container">
-  <div class="answer">{{ question.answer }}</div>
-  <div class="variants">
+<div [@zoom] *ngIf="question && !ended" class="container">
+  <div class="question">{{ question.question }}</div>
+  <div
+    *ngIf="question.image"
+    class="image"
+    [style.backgroundImage]="'url(' + question.image + ')'"
+  ></div>
+  <div *ngIf="isSelect" class="variants">
     <button
       (click)="check(i)"
       [ngClass]="{
@@ -13,17 +18,36 @@
       {{ variant }}
     </button>
   </div>
-  <button
-    [ngClass]="{ hidden: !isAnswered }"
-    (click)="nextQuestion()"
-    class="next"
-  >
-    Продолжить
-  </button>
+  <div [ngClass]="{ none: !isInput }" class="input">
+    <input
+      autofocus
+      (keydown.enter)="submit()"
+      [(ngModel)]="userAnswer"
+      type="text"
+      [ngClass]="{
+        'input-correct': isAnswered && isCorrect,
+        'input-wrong': isAnswered && !isCorrect
+      }"
+    />
+    <div *ngIf="isAnswered" class="real">
+      {{ question.correct }}
+    </div>
+    <button *ngIf="!isAnswered" (click)="enter()" class="next next-enter">
+      Ввести
+    </button>
+  </div>
+  <div *ngIf="!isInput || isAnswered" [ngClass]="{ hidden: !isAnswered }">
+    <div *ngIf="question.description" class="description">
+      {{ question.description }}
+    </div>
+    <button (click)="nextQuestion()" class="next">
+      Продолжить
+    </button>
+  </div>
 </div>
 
-<div *ngIf="ended" class="container">
-  <div class="answer">Вопросы закончились</div>
+<div [@zoom] *ngIf="ended" class="container">
+  <div class="question">Вопросы закончились</div>
   <button (click)="load()" class="next">
     Начать заново
   </button>

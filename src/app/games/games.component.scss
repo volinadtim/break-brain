@@ -1,0 +1,41 @@
+h1 {
+  margin-bottom: 30px;
+}
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game_block {
+  margin-bottom: 20px;
+  flex: 0 25%;
+  padding-right: 24px;
+}
+
+.link {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: var(--purple);
+  font-weight: 700;
+  color: white;
+  width: 100%;
+  padding: 20px 30px;
+  margin-right: 25px;
+  font-size: 1.3em;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.1s;
+  &:hover {
+    transform: translateY(-5px);
+    background: var(--darkpurple);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .game_block {
+    flex: 1;
+    padding-right: 0;
+  }
+}

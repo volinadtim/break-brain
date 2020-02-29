@@ -1,15 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { QuizRoutingModule } from './quiz-routing.module';
+import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 import { QuizComponent } from './quiz.component';
-
+import { QuizRoutingModule } from './quiz-routing.module';
 
 @NgModule({
   declarations: [QuizComponent],
-  imports: [
-    CommonModule,
-    QuizRoutingModule
-  ]
+  imports: [CommonModule, QuizRoutingModule, FormsModule]
 })
-export class QuizModule { }
+export class QuizModule {}

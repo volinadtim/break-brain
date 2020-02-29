@@ -1,15 +1,31 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+  padding: 20px 0;
+}
+
 .variants {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
-.answer {
+.question {
   text-align: center;
   font-size: 1.8em;
   margin-bottom: 30px;
   font-weight: 500;
+}
+
+.image {
+  min-height: 200px;
+  margin-bottom: 30px;
+  background: center / contain no-repeat;
 }
 
 .variant {
@@ -23,7 +39,7 @@
   user-select: none;
   border: none;
   cursor: pointer;
-  transition: 0.1s;
+  transition: 0.1s background;
   &:hover {
     background: #eaeaea;
   }
@@ -31,7 +47,7 @@
 }
 
 .wrong {
-  background: #f51b59;
+  background: var(--red);
   color: white;
   font-weight: 500;
   &:hover {
@@ -40,7 +56,7 @@
 }
 
 .correct {
-  background: #15e65a;
+  background: var(--green);
   color: white;
   font-weight: 500;
   &:hover {
@@ -50,28 +66,68 @@
 
 .next {
   margin: auto;
+  margin-top: 30px;
   display: block;
   font-size: 1em;
   padding: 22px 60px;
   border: none;
   font-weight: 700;
-  background: #4421fe;
+  background: var(--purple);
   color: white;
-  transition: 0.1s;
+  transition: 0.1s background;
   user-select: none;
   cursor: pointer;
   border: 2px solid transparent;
   &:hover {
-    background: #2f0af5;
+    background: var(--darkpurple);
   }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  padding: 15px 20px;
+  text-align: center;
+  border: 2px solid var(--purple);
+}
+
+.input-correct {
+  border-color: var(--green);
+}
+
+.input-wrong {
+  border-color: var(--red);
+}
+
+.real {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--green);
 }
 
 .hidden {
   visibility: hidden;
 }
 
+.description {
+  font-size: 1em;
+  color: #777;
+  font-weight: 500;
+  text-align: center;
+}
+
+.none {
+  display: none;
+}
+
 @media screen and (max-width: 540px) {
-  .answer {
+  .question {
     font-size: 1.2em;
   }
   .variants {

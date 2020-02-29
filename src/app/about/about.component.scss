@@ -1,0 +1,17 @@
+.links {
+  display: flex;
+  padding-top: 20px;
+}
+
+.link {
+  padding: 20px;
+  font-size: 1.2em;
+  background: var(--purple);
+  color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.1s;
+  &:hover {
+    transform: translateY(-5px);
+    background: var(--darkpurple);
+  }
+}

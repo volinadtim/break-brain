@@ -1,7 +1,6 @@
 :host {
   --height: 80px;
   display: block;
-  // border-bottom: 2px solid #4421fe;
   box-shadow: inset 0 -5px 5px -3px rgba(0, 0, 0, 0.1);
   height: var(--height);
   background: #00000003;
@@ -21,7 +20,7 @@ header {
 }
 
 .logo__p {
-  color: #4421fe;
+  color: var(--purple);
 }
 
 .links {
@@ -38,7 +37,16 @@ header {
   line-height: var(--height);
   &.active,
   &:hover {
-    color: #4421fe;
+    color: var(--purple);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    flex-direction: column;
+  }
+  .link {
+    line-height: 2;
   }
 }
 

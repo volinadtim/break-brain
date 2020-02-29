@@ -1,0 +1,99 @@
+.game {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+  position: relative;
+  max-width: 80vh;
+  margin: auto;
+}
+
+.table {
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.cell {
+  flex: 1;
+  border: 1px solid #eee;
+  background: #fefefe;
+  font-size: 1.2em;
+  padding-top: 20%;
+  position: relative;
+  cursor: pointer;
+  transition: 0.1s;
+  user-select: none;
+  &:hover,
+  &:hover .cell_in {
+    border-color: var(--purple);
+  }
+}
+
+.cell_in {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+}
+
+.current {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.end {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffffbb;
+  flex-direction: column;
+}
+
+.score {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.next {
+  font-size: 1em;
+  padding: 22px 60px;
+  border: none;
+  font-weight: 700;
+  background: var(--purple);
+  color: white;
+  transition: 0.1s;
+  user-select: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  &:hover {
+    background: var(--darkpurple);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .game {
+    max-width: 100%;
+  }
+}

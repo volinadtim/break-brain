@@ -2,10 +2,14 @@ export interface Puzzle {
   title: string;
   condition: string;
   solution: string;
+  image?: string;
 }
 
 export interface Quiz {
-  answer: string;
+  question: string;
   correct: string;
-  wrong: string[];
+  wrong?: string[];
+  image?: string;
+  forms?: string[];
+  description?: string;
 }

@@ -1,5 +1,12 @@
 <div class="title">{{ data.title }}</div>
-<div class="condition">{{ data.condition }}</div>
+<div class="condition">
+  <div class="text">{{ data.condition }}</div>
+  <div
+    *ngIf="data.image"
+    class="image"
+    [style.backgroundImage]="'url(' + data.image + ')'"
+  ></div>
+</div>
 <button (click)="toggle()" class="show_solution" [ngClass]="{ active: isShow }">
   Решение
 </button>
